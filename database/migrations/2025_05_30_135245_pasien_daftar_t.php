@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('pasien_daftar_t', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pasien_id')->nullable();
-            $table->string('berat_badan');
-            $table->string('tekanan_darah');
-            $table->string('keluhan');
-            $table->string('hasil_diagnosa');
+            $table->foreignId('pasien_id');
+            $table->dateTime('tanggal_registrasi');
+            $table->string('noregistrasi');
+            $table->string('berat_badan')->nullable();
+            $table->string('tekanan_darah')->nullable();
+            $table->string('keluhan')->nullable();
+            $table->string('hasil_diagnosa')->nullable();
             $table->timestamps();
         });
     }
